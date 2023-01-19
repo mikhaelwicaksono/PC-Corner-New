@@ -9,23 +9,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container text-bg-primary p-3">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom ">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <img style ="height: 50%; width: 40%" src="{{url('/assets/logo-light.png')}}" alt="">
+    <div class="container-fluid bg-primary">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none mx-auto">
+            <img style ="height: 50%; width: 50%" src="{{url('/assets/logo-light.png')}}" alt="">
           </a>
     
-          <ul class="nav nav-pills mx-auto">
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 mx-auto">
             <li class="nav-item"><a href="#" class="nav-link link-light">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link link-light">Request Service</a></li>
             <li class="nav-item"><a href="#" class="nav-link link-light">History</a></li>
             <li class="nav-item"><a href="#" class="nav-link link-light">FAQs</a></li>
             <li class="nav-item"><a href="#" class="nav-link link-light">Contact</a></li>
           </ul>
+
+          <div class="col-md-3 text-end mx-auto">
+            <button type="button" class="btn btn-primary">Profile</button>
+          </div>
         </header>
       </div>
-    <div class="b-example-divider"></div>
     <main class="py-4">
         @yield('content')
     </main>

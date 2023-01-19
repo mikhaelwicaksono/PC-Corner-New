@@ -31,3 +31,5 @@ Route::get('/logout', function () {
     return redirect('login');
 })->name('logout')->middleware('auth');
 Route::view('/home', 'home', ['title' => 'home'])->name('home')->middleware('auth');
+Route::get('/request/{b}',[RequestsController::class,'viewing']);
+Route::post('/load/{c}',[RequestsController::class,'adding']);

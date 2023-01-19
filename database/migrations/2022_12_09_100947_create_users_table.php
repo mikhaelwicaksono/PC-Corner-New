@@ -17,12 +17,9 @@ return new class extends Migration
             $table->id('users_id');
             $table->string('username');
             $table->string('email');
-            $table->string('phone');
+            $table->string('phonenumber');
             $table->string('address');
             $table->string('password');
-            $table->string('status');
-            // $table->rememberToken();
-            // $table->timestamps();
         });
     }
 

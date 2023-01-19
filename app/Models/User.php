@@ -3,20 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+
+class User extends Authenticatable
 {
     use HasFactory;
     public $timestamps = false;
 
+    protected $table = 'users';
+    protected $primaryKey = 'users_id';
     protected $fillable = [
         'username',
         'email',
-        'phone',
+        'phonenumber',
         'address',
         'password',
-        'status'
     ];
 
     /**
@@ -29,7 +31,8 @@ class User extends Model
         'remember_token',
     ];
 
-    public  function requests(){
+    public  function requests()
+    {
         return $this->hasMany(Requests::class);
     }
 }

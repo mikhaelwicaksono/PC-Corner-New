@@ -13,11 +13,15 @@
         <img src="{{url('/assets/pc.jpg')}}" class="img-fluid opacity-25" alt="Background Image">
         <div class="container text-center">
             <div class="card-img-overlay">
-                <ul class="nav nav-pills d-flex justify-content-center">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                  </ul>
+                <div class="container-fluid bg-black">
+                    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 mx-auto">
+                        <li class="nav-item"><a href="#" class="nav-link link-light">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link link-light">FAQs</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link link-light">Contact</a></li>
+                      </ul>
+                    </header>
+                  </div>
                 <div class="row d-flex h-100">
                     <div class="col align-self-center">
                         <img src="{{url('/assets/logo.png')}}" alt="">

@@ -33,3 +33,5 @@ Route::get('/logout', function () {
 Route::view('/home', 'home', ['title' => 'home'])->name('home')->middleware('auth');
 Route::get('/request/{b}',[RequestsController::class,'viewing']);
 Route::post('/load/{c}',[RequestsController::class,'adding']);
+Route::get('/updatepassword/{s}',[UserController::class,'viewupdate']);
+Route::post('/executedpassword/{l}',[UserController::class,'updatingpassword']);

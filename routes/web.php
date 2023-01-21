@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register', [UserController::class, 'register_auth'])->name('register')->middleware('guest');

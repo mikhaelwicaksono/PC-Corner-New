@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('more_information');
             $table->string('img');
             $table->date('request_date');
-
             });
     }
 

@@ -9,7 +9,7 @@
                     @endforeach
                 @endif
                 <div class="card mt-3">
-                    <div class="card-body" style="background-color: #2DCDDF">
+                    <div class="card-body" style="background-color: dodgerblue; color: white">
                         <form action="{{ route('register') }}" method="POST">
                             @csrf
                             <div class="title text-center mb-4">
@@ -41,10 +41,10 @@
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="submit" class="btn d-grid gap-2 col-6 mx-auto mb-4"
-                                    style="background-color: black; color: white">Sign Up</button>
+                                    style="background-color: blue; color: white">Sign Up</button>
                             </div>
-                            <div id="button" class="form-text text-center mb-4">Already Registered? <a
-                                    href="{{ route('login') }}">Sign in here</a></div>
+                            <div id="button" class="form-text text-center mb-4" style="color: black">Already Registered? <a
+                                    href="{{ route('login') }}" style="color: blue">Sign in here</a></div>
 
                         </form>
                     </div>

@@ -12,10 +12,10 @@
                     @endforeach
                 @endif
                 <div class="card mx auto">
-                    <div class="card-body" style="background-color: #2DCDDF">
+                    <div class="card-body" style="background-color: dodgerblue; color: white">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-                            <div class="title text-center mb-5" style="color: black">
+                            <div class="title text-center mb-5" style="color: white">
                                 <h1>Login In</h1>
                             </div>
                             <div class="mb-3 col-sm-14">
@@ -30,11 +30,11 @@
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="submit" class="btn d-grid gap-2 col-6 mx-auto mb-4"
-                                    style="background-color: black; color: white">Log in</button>
+                                    style="background-color: blue; color: white">Log in</button>
                             </div>
 
-                            <div id="button" class="form-text text-center" style="height: 100px; color: black">Not
-                                Register yet? <a href="register">Register Now!</a>
+                            <div id="button" class="form-text text-center" style="height: 100px; color: white">Not
+                                Register yet? <a href="register" style="color: blue">Register Now!</a>
                             </div>
                         </form>
                     </div>

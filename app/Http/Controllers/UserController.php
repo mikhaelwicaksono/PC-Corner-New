@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -50,6 +51,46 @@ class UserController extends Controller
         }
         return back()->withErrors(['password' => 'Wrong your email or password!',]);
     }
+    
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User $user
+     * @return \Illuminate\Http\Response
+     */
+    public function viewupdate($s)
+    {
+        $userid = DB::table('users')->where('users_id','LIKE',$s)->get();
+        return view('vieweditpassword',['user' => $userid]);
+    }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function updatingpassword(Request $request, $l)
+    {
+    $data = DB::table('users')->where('users_id','LIKE',$l)->get('password')->first()->password;
+    $c = $request->oldpassword;
+    $request->validate([
+            'oldpassword' => 'required',
+            'newpassword' => 'required',
+    ]);
+
+    if((string) $c != (string) $data){
+        return back()->with("Error","Old Password Don't Match");
+    }
+
+    $datafinal = DB::table('users')->where('users_id','LIKE',$l)->update([
+        'password' => $request->newpassword
+    ]);
+    return back()->with("status","Password Changed Successfully !!", $datafinal);
+    }
+    
 
     public function index()
     {

@@ -1,7 +1,7 @@
-@extends('template.header')
+@extends('template.layout')
 
 @section('content')
-    <div class="row" style="background-color:rgb(145, 145, 232)">
+    <div class="row" style="background-color:dodgerblue; color: white">
         <div class="container">
             <h2 class="text-center my-5">Repair Request Form</h2>
 
@@ -42,10 +42,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="quantity">Descryption</label>
+                        <label for="quantity">Description</label>
                         <textarea name="more_information" class="form-control" id="string" aria-label="" rows="3"></textarea>
                     </div>
-                    <input type="submit" value="Add" class="btn btn-primary">
+                    <input type="submit" value="Add" class="btn" style="background-color: blue; color: white">
                 </form>
             </div>
         </div>

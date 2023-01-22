@@ -20,7 +20,7 @@
             <li class="nav-item"><a href="#" class="nav-link link-light">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link link-light">Request Service</a></li>
             <li class="nav-item"><a href="#" class="nav-link link-light">History</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link link-light">About</a></li>
             <li class="nav-item"><a href="#" class="nav-link link-light">Contact</a></li>
           </ul>
 

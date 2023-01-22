@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RequestsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('landing');
 });
+
 Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register', [UserController::class, 'register_auth'])->name('register')->middleware('guest');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
@@ -35,3 +37,5 @@ Route::get('/request/{b}',[RequestsController::class,'viewing']);
 Route::post('/load/{c}',[RequestsController::class,'adding']);
 Route::get('/updatepassword/{s}',[UserController::class,'viewupdate']);
 Route::post('/executedpassword/{l}',[UserController::class,'updatingpassword']);
+
+Route::get('/home', [HomeController::class, 'showName']);

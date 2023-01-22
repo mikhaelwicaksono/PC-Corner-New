@@ -1,42 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-<body>
-    <div class="card text-center">
-        <img src="{{url('/assets/pc.jpg')}}" class="img-fluid opacity-25" alt="Background Image">
-        <div class="container text-center">
-            <div class="card-img-overlay">
-                <div class="container-fluid bg-black">
-                    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 mx-auto">
-                        <li class="nav-item"><a href="#" class="nav-link link-light">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link link-light">FAQs</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link link-light">Contact</a></li>
-                      </ul>
-                    </header>
+@extends('template.layout')
+
+@section('content')
+<div class="container px-4 py-5" id="custom-cards">
+    @foreach ($users as $user)
+    <h2 class="pb-2 border-bottom">Hi, {{ $user->username }}</h2>
+    @endforeach
+
+    <div class="align-items-center">
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('assets/service.png');">
+                  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <a href="request/{b}" class="link-light"><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Request Service</h3></a>
                   </div>
-                <div class="row d-flex h-100">
-                    <div class="col align-self-center">
-                        <img src="{{url('/assets/logo.png')}}" alt="">
-                        <p class="card-text text-dark w-50 p-3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <a href="/" class="btn btn-primary fs-5">Register</a>
-                        <div id="button" class="form-text text-center mb-4">Already Registered? <a
-                            href="{{ route('login') }}">Sign in here</a>
-                        </div>
-                    </div>
                 </div>
+              </div>
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('assets/activities.png');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                  <a href="request/{b}" class="link-light"><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Your Activities</h3></a>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
     </div>
 
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
-</html>
+  </div>
+@endsection

@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="quantity">Descryption</label>
+                        <label for="quantity">Description</label>
                         <textarea name="more_information" class="form-control" id="string" aria-label="" rows="3"></textarea>
                     </div>
                     <input type="submit" value="Add" class="btn" style="background-color: blue; color: white">

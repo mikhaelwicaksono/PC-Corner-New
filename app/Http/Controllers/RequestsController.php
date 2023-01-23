@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class RequestsController extends Controller
 {
@@ -43,7 +44,7 @@ class RequestsController extends Controller
         ]);
     }
 
-    public function adding(Request $request, $c){
+    public function adding(Request $request){
 		$this->validate($request, [
 			'file' => 'required',
             'type' => 'required',
@@ -65,15 +66,17 @@ class RequestsController extends Controller
 
         $img->move($tujuan_upload,$img->getClientOriginalName());
 
-        DB::insert('insert into requests (users_id, type, brand, model_code, more_information, img, request_date) values (?,?,?,?,?,?,?)',[
-            $c,
-            $request->type,
-            $request->brand,
-            $request->model_code,
-            $request->more_information,
-            $nama_img,
-            $date,
-        ]);
+        // DB::insert('insert into requests (users_id, type, brand, model_code, more_information, img, request_date) values (?,?,?,?,?,?,?)',[
+            $request_model = new Requests();
+            $request_model->users_id = Auth::user()->users_id;
+            $request_model->type = $request->type;
+            $request_model->brand = $request->brand;
+            $request_model->model_code =$request->model_code;
+            $request_model->more_information =$request->more_information;
+            $request_model->img =  $nama_img;
+            $request_model->request_date =  $date;
+            $request_model->save();
+        // ]);
 
         return redirect()->back();
 	}

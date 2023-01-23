@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         $req->validate([
             'username' => ['required', 'unique:users,username'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'min:6'],
             'phonenumber' => 'required',
             'address' => 'required',

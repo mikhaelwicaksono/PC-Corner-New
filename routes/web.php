@@ -34,10 +34,17 @@ Route::get('/logout', function () {
     return redirect('login');
 })->name('logout')->middleware('auth');
 Route::view('/home', 'home', ['title' => 'home'])->name('home')->middleware('auth');
+<<<<<<< HEAD
+Route::get('/request/{b}', [RequestsController::class, 'viewing']);
+Route::post('/load/{c}', [RequestsController::class, 'adding']);
+Route::get('/updatepassword/{s}', [UserController::class, 'viewupdate']);
+Route::post('/executedpassword/{l}', [UserController::class, 'updatingpassword']);
+=======
 Route::get('/request/{b}',[RequestsController::class,'viewing']);
 Route::post('/load/{c}',[RequestsController::class,'adding']);
 Route::get('/updatepassword/{s}',[UserController::class,'viewupdate']);
 Route::post('/executedpassword/{l}',[UserController::class,'updatingpassword']);
+>>>>>>> f8723c98348ffd6bf3fa32900ce65f120b41aac1
 
 Route::get('/home', [HomeController::class, 'showName']);
 

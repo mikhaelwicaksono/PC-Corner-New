@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 class HomeController extends Controller
 {
     public function showName()
     {
-        $users = DB::select('SELECT * FROM users');
-        return view('home',['users'=>$users]);
+        $user = User::where('users_id', Auth::user()->users_id)->first();
+        return view('home', compact('user'));
     }
 }

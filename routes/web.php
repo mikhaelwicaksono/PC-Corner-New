@@ -3,6 +3,7 @@
 use App\Http\Controllers\RequestsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +40,5 @@ Route::get('/updatepassword/{s}',[UserController::class,'viewupdate']);
 Route::post('/executedpassword/{l}',[UserController::class,'updatingpassword']);
 
 Route::get('/home', [HomeController::class, 'showName']);
+
+Route::get('/history', [HistoryController::class, 'view']);

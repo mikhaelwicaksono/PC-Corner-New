@@ -65,7 +65,7 @@ class RequestsController extends Controller
 
         $img->move($tujuan_upload,$img->getClientOriginalName());
 
-        DB::insert('insert into request (users_id, type, brand, model_code, more_information, img, request_date) values (?,?,?,?,?,?,?)',[
+        DB::insert('insert into requests (users_id, type, brand, model_code, more_information, img, request_date) values (?,?,?,?,?,?,?)',[
             $c,
             $request->type,
             $request->brand,

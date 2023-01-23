@@ -14,4 +14,14 @@ class HomeController extends Controller
         $user = User::where('users_id', Auth::user()->users_id)->first();
         return view('home', compact('user'));
     }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

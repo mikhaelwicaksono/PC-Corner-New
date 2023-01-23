@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Layout</title>
+    <title>@yield('title','PC-Corner')</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
@@ -17,11 +17,11 @@
           </a>
     
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 mx-auto">
-            <li class="nav-item"><a href="#" class="nav-link link-light">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light">Request Service</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light">History</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light">Contact</a></li>
+            <li class="nav-item"><a href="/home" class="nav-link link-light">Home</a></li>
+            <li class="nav-item"><a href="/request/{b}" class="nav-link link-light">Request Service</a></li>
+            <li class="nav-item"><a href="/history" class="nav-link link-light">History</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link link-light">About</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link link-light">Contact</a></li>
           </ul>
 
           <div class="col-md-3 text-end mx-auto">

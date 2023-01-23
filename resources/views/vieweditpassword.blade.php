@@ -47,7 +47,7 @@
       <div class="container">
         <div class="btn-group mx-auto">
       <button type="submit" class="btn btn-primary">Save Update</button>
-      <a class="btn btn-primary" href="/viewprofile" style="display:inline-block;vertical-align:top; padding-left:0.7%; color:white; background-color:rgb(56, 77, 213)">Back</a>
+      <a class="btn btn-primary" href="/home" style="display:inline-block;vertical-align:top; padding-left:0.7%; color:white; background-color:rgb(56, 77, 213)">Back</a>
     </div>
 </div>
     </form>

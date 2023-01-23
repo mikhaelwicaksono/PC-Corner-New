@@ -1,5 +1,5 @@
 @extends('template.layout')
-
+@section('title', 'Request Service')
 @section('content')
     <div class="row" style="background-color:dodgerblue; color: white">
         <div class="container">

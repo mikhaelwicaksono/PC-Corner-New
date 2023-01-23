@@ -1,5 +1,5 @@
 @extends('template.layout')
-
+@section('title', 'History')
 @section('content')
 <div class="container">
     @foreach ($requests as $req)
@@ -18,5 +18,4 @@
     <p></p>
     @endforeach
 </div>
-
 @endsection

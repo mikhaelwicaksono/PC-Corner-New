@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RequestsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
@@ -20,20 +21,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 });
+Route::middleware(['guest'])->group(function () {
+    Route::get('/register', [UserController::class, 'register'])->name('register');
+    Route::post('/register', [UserController::class, 'registerUser'])->name('register');
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'loginUser'])->name('login');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/logout', function () {
+        auth()->logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
 
-Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('guest');
-Route::post('/register', [UserController::class, 'register_auth'])->name('register')->middleware('guest');
-Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
-Route::post('/login', [UserController::class, 'login_auth'])->name('login')->middleware('guest');
-
-Route::get('/logout', function () {
-    auth()->logout();
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
-
-    return redirect('login');
-})->name('logout')->middleware('auth');
-Route::view('/home', 'home', ['title' => 'home'])->name('home')->middleware('auth');
+        return redirect('login');
+    })->name('logout');
+});
 Route::get('/request/{b}', [RequestsController::class, 'viewing']);
 Route::post('/load/{c}', [RequestsController::class, 'adding']);
 Route::get('/updatepassword/{s}', [UserController::class, 'viewupdate']);

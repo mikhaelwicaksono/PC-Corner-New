@@ -12,57 +12,32 @@ class UserController extends Controller
 {
     public function register()
     {
-        $data['title'] = 'Register';
-        return view('auth.register', $data);
+        return view('auth.register');
     }
-    public function register_auth(Request $req)
+    public function registerUser(Request $req)
     {
-        $req->validate([
+        $this->validate($req, [
             'username' => ['required', 'unique:users,username'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'min:6'],
-            'phonenumber' => 'required',
-            'address' => 'required',
+            'phonenumber' => ['required', 'min:10', 'max:13'],
+            'address' => ['required', 'min:10'],
         ]);
-        $user = new User([
+        $newUser = new User([
             'username' => $req->username,
             'email' => $req->email,
             'password' => Hash::make($req->password),
             'phonenumber' => $req->phonenumber,
             'address' => $req->address,
         ]);
-        $user->save();
+        $newUser->save();
         return redirect()->route('login')->with('success', 'Registration has been succed!');
     }
-    public function login()
-    {
-        $data['title'] = 'Login';
-        return view('auth.login', $data);
-    }
-    public function login_auth(Request $req)
-    {
-        $credentials = $req->validate([
-            'email' => ['required', 'email', 'string'],
-            'password' => ['required', 'string'],
-        ]);
-        if (Auth::attempt($credentials)) {
-            $req->session()->regenerate();
-            return redirect()->intended('home');
-        }
-        return back()->withErrors(['password' => 'Wrong your email or password!',]);
-    }
-    
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User $user
-     * @return \Illuminate\Http\Response
-     */
+
     public function viewupdate($s)
     {
-        $userid = DB::table('users')->where('users_id','LIKE',$s)->get();
-        return view('vieweditpassword',['user' => $userid]);
+        $userid = DB::table('users')->where('users_id', 'LIKE', $s)->get();
+        return view('vieweditpassword', ['user' => $userid]);
     }
 
 
@@ -74,23 +49,23 @@ class UserController extends Controller
      */
     public function updatingpassword(Request $request, $l)
     {
-    $data = DB::table('users')->where('users_id','LIKE',$l)->get('password')->first()->password;
-    $c = $request->oldpassword;
-    $request->validate([
+        $data = DB::table('users')->where('users_id', 'LIKE', $l)->get('password')->first()->password;
+        $c = $request->oldpassword;
+        $request->validate([
             'oldpassword' => 'required',
             'newpassword' => 'required',
-    ]);
+        ]);
 
-    if((string) $c != (string) $data){
-        return back()->with("Error","Old Password Don't Match");
+        if ((string) $c != (string) $data) {
+            return back()->with("Error", "Old Password Don't Match");
+        }
+
+        $datafinal = DB::table('users')->where('users_id', 'LIKE', $l)->update([
+            'password' => $request->newpassword
+        ]);
+        return back()->with("status", "Password Changed Successfully !!", $datafinal);
     }
 
-    $datafinal = DB::table('users')->where('users_id','LIKE',$l)->update([
-        'password' => $request->newpassword
-    ]);
-    return back()->with("status","Password Changed Successfully !!", $datafinal);
-    }
-    
 
     public function index()
     {

@@ -60,16 +60,17 @@ class UserController extends Controller
     public function updatingpassword(Request $request, $b)
     {
         $data = DB::table('users')->where('users_id', 'LIKE', $b)->get('password')->first()->password;
-        $c = Hash::make($request->oldpassword);
+        $c = $request->oldpassword;
         $request->validate([
             'oldpassword' => 'required',
             'newpassword' => 'required',
         ]);
+        
 
         //ada kesalahan disini
-        // if ($c != $data) {
-        //     return back()->with("Error", "Old Password Don't Match");
-        // }
+         if (!Hash::check($c,auth()->user()->$data)) {
+             return back()->with("Error", "Old Password Don't Match");
+         }
 
         $datafinal = DB::table('users')->where('users_id', 'LIKE', $b)->update([
             'password' => Hash::make($request->newpassword)

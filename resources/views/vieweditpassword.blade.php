@@ -5,8 +5,8 @@
         <form class="Forum" method="POST" action="/executedpassword/{{ $p->users_id }}"
             style="background-color:rgb(91, 91, 229)">
             @csrf
-            <div class="judul" style="text-align:center;">
-                <a>Update Password</a>
+            <div class="judul" style="text-align:center; color: white">
+                <h2>Update Password</h2>
             </div>
 
             <div class="forum-body">
@@ -20,18 +20,18 @@
 
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Old Password</label>
+                <label for="exampleInputPassword1" class="form-label" style="color: white;">Old Password</label>
                 <input type="password" name="oldpassword"
                     class="form-control @error('oldpassword')
-         is-invalid
-        @enderror" id="password"
-                    placeholder="Old Password">
+                is-invalid
+                @enderror"
+                    id="password" placeholder="Old Password">
                 @error('oldpassword')
                     <span class="textdanger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword2" class="form-label">New Password</label>
+                <label for="exampleInputPassword2" class="form-label" style="color: white;">New Password</label>
                 <input type="password" name="newpassword" class="form-control" id="password" placeholder="New Password"
                     value={{ $p->password }}>
             </div>

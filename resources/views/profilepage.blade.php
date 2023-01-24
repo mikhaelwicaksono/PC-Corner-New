@@ -2,7 +2,7 @@
 @section('title', 'Profile')
 @section('content')
 
-    {{-- @foreach ($profile as $b) --}}
+    @foreach ($profile as $b)
         <div class="container">
             <div class="card mx-auto" style="width: 30rem; text-align:center; justify-content:center">
                 <div class="title">
@@ -23,5 +23,5 @@
                 </div>
             </div>
         </div>
-    {{-- @endforeach --}}
+    @endforeach
 @endsection

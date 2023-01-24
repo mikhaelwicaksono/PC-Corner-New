@@ -48,6 +48,11 @@ class UserController extends Controller
 
         $user = User::where('users_id', Auth::user()->users_id)->first();
         return view('profilepage', compact('user'));
+        $user = DB::table('users')->where('users_id', 'LIKE', $b)->get();
+        return view('profilepage', [
+            'profile' => $user,
+            'count' => $b
+        ]);
     }
 
 
@@ -57,21 +62,22 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function updatingpassword(Request $request, $l)
+    public function updatingpassword(Request $request, $b)
     {
-        $data = DB::table('users')->where('users_id', 'LIKE', $l)->get('password')->first()->password;
-        $c = $request->oldpassword;
+        $data = DB::table('users')->where('users_id', 'LIKE', $b)->get('password')->first()->password;
+        $c = Hash::make($request->oldpassword);
         $request->validate([
             'oldpassword' => 'required',
             'newpassword' => 'required',
         ]);
 
-        if ((string) $c != (string) $data) {
-            return back()->with("Error", "Old Password Don't Match");
-        }
+        //ada kesalahan disini
+        // if ($c != $data) {
+        //     return back()->with("Error", "Old Password Don't Match");
+        // }
 
-        $datafinal = DB::table('users')->where('users_id', 'LIKE', $l)->update([
-            'password' => $request->newpassword
+        $datafinal = DB::table('users')->where('users_id', 'LIKE', $b)->update([
+            'password' => Hash::make($request->newpassword)
         ]);
         return back()->with("status", "Password Changed Successfully !!", $datafinal);
     }
@@ -122,7 +128,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view ('editProfile');
     }
 
     /**
@@ -134,7 +140,21 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'username' => 'required', 'unique:users,username',
+            'email' => 'required', 'email', 'unique:users,email',
+            'phonenumber' => 'required', 'min:10',
+            'address' => 'required', 'min:10',
+        ]);
+
+        auth()->user()->update([
+            'username' => $request->get('username'),
+            'email' => $request->get('email'),
+            'phonenumber' => $request->get('phonenumber'),
+            'address' => $request->get('address'),
+        ]);
+
+        return redirect()->route('Edit Profile Page');
     }
 
     /**

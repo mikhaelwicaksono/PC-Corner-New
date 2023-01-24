@@ -16,11 +16,11 @@ class UserController extends Controller
     public function registerUser(Request $req)
     {
         $this->validate($req, [
-            'username' => ['required', 'unique:users,username'],
-            'email' => ['required', 'email', 'unique:users,email'],
-            'password' => ['required', 'min:6'],
-            'phonenumber' => ['required', 'min:10', 'max:13'],
-            'address' => ['required', 'min:10'],
+            'username' => 'required', 'unique:users,username',
+            'email' => 'required', 'email', 'unique:users,email',
+            'password' => 'required', 'min:6',
+            'phonenumber' => 'required', 'min:10',
+            'address' => 'required', 'min:10',
         ]);
         $newUser = new User([
             'username' => $req->username,

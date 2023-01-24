@@ -34,7 +34,7 @@
             </ul>
 
             <div class="col-md-3 text-end mx-auto">
-                <button type="button" class="btn btn-primary"><a href="/profile/{b}"
+                <button type="button" class="btn btn-primary"><a href="/profile/1"
                         class="nav-link link-light">Profile</a></button>
             </div>
         </header>

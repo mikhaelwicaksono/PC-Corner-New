@@ -40,6 +40,7 @@ Route::get('/request/{b}', [RequestsController::class, 'viewing']);
 Route::post('/load/{c}', [RequestsController::class, 'adding']);
 Route::get('/updatepassword/{s}', [UserController::class, 'viewupdate']);
 Route::post('/executedpassword/{l}', [UserController::class, 'updatingpassword']);
+Route::get('/profile/{b}',[UserController::class,'display']);
 
 Route::get('/home', [HomeController::class, 'showName']);
 Route::get('/about', [HomeController::class, 'about']);

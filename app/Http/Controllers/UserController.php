@@ -38,6 +38,14 @@ class UserController extends Controller
         $userid = DB::table('users')->where('users_id', 'LIKE', $s)->get();
         return view('vieweditpassword', ['user' => $userid]);
     }
+    
+    public function display($b)
+    {
+        $user = DB::table('users')->where('users_id','LIKE',$b)->get();
+        return view('profilepage',['profile' => $user,
+                        'count'=>$b]);
+
+    }
 
 
     /**

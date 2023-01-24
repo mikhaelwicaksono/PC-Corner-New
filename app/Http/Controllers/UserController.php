@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -39,12 +40,14 @@ class UserController extends Controller
         return view('vieweditpassword', ['user' => $userid]);
     }
     
-    public function display($b)
+    public function display()
     {
-        $user = DB::table('users')->where('users_id','LIKE',$b)->get();
-        return view('profilepage',['profile' => $user,
-                        'count'=>$b]);
+        // $user = DB::table('users')->where('users_id','LIKE',$b)->get();
+        // return view('profilepage',['profile' => $user,
+        //                 'count'=>$b]);
 
+        $user = User::where('users_id', Auth::user()->users_id)->first();
+        return view('profilepage', compact('user'));
     }
 
 

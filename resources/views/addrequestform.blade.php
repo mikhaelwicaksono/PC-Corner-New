@@ -3,7 +3,7 @@
 @section('content')
     <div class="row" style="background-color:dodgerblue; color: white;">
         <div class="container">
-            <h2 class="text-center my-5">Repair Request Form</h2>
+            <h2 class="text-center my-5">Service Request Form</h2>
 
             <div class="col-lg-8 mx-auto my-5">
 

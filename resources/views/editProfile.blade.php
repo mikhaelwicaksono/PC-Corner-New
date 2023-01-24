@@ -15,7 +15,7 @@
             <div class="form-group my-3">
                 <label for="username">Username</label>
                 <input type="text" name="username" class="form-control rounded-top @error('username') is-invalid @enderror"
-                    id="username" value="{{ auth()->user()->username }}" required>
+                    id="username" value="{{auth()->user()->username }}" required>
                 @error('username')
                     <div class="invalid-feedback">
                         {{ $message }}

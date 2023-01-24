@@ -3,6 +3,10 @@
 @section('content')
     <div class="container">
 
+        @if (empty($requests))
+            <p>You haven't done any activity yet</p>
+        @endif
+
         <div class="row">
             @foreach ($requests as $req)
                 <div class="col-sm-6 mb-3 mb-sm-0 my-2">

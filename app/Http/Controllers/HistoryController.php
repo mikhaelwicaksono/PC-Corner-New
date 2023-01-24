@@ -48,8 +48,8 @@ class HistoryController extends Controller
         $request_model->brand = $request->brand;
         $request_model->more_information = $request->more_information;
         $request_model->img =  $nama_img;
-        $request_model->request_date =  Carbon::now()->toDateTimeLocalString();
-        $request_model->expired_at = Carbon::now()->addMinutes(5)->toDateTimeLocalString();
+        // $request_model->request_date =  Carbon::now()->toDateTimeLocalString();
+        // $request_model->expired_at = Carbon::now()->addDay()->toDateTimeLocalString();
         $request_model->save();
 
         return redirect()->back();

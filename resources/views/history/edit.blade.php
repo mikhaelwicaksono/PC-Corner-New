@@ -17,12 +17,6 @@
             <form action="{{route('history.update',$requests->request_id)}}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                <div class="form-group mb-2">
-                    <b>Product Image</b><br />
-                    <input type="file" name="file" accept="image/*" class="form-control">
-                </div>
-
-
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Type</label>
                     <input type="text" name="type" class="form-control" id="name" value="{{$requests->type}}">
@@ -43,7 +37,12 @@
                     <textarea name="more_information" class="form-control" id="string" aria-label="" rows="3">{{$requests->more_information}}
                     </textarea>
                 </div>
-                <input type="submit" value="Add" class="btn" style="background-color: blue; color: white">
+
+                <div class="form-group mb-2">
+                    <b>Product Image</b><br />
+                    <input type="file" name="file" accept="image/*" class="form-control">
+                </div>
+                <input type="submit" value="Add" class="btn" style="background-color: blue; color: white; margin-top: 10px">
             </form>
         </div>
     </div>

@@ -29,13 +29,13 @@
                 <li class="nav-item"><a href="/history" class="nav-link link-light">History</a></li>
                 <li class="nav-item"><a href="/about" class="nav-link link-light">About</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link link-light">Contact</a></li>
-                <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link link-light text-warning">Log
-                        Out</a></li>
             </ul>
 
             <div class="col-md-3 text-end mx-auto">
-                <button type="button" class="btn btn-primary"><a href="/profile/1"
-                        class="nav-link link-light">Profile</a></button>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 mx-auto">
+                    <li class="nav-item"><a href="/profile/1" class="nav-link link-light">Profile</a></li>
+                    <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link link-light text-warning">Log Out</a></li>
+                </ul>
             </div>
         </header>
     </div>

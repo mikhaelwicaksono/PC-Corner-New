@@ -36,7 +36,7 @@
                     src="{{ url('/person/juan.jpg') }}" alt="">
                 <h4 class="fw-bold" style="margin-top: 10px">JUANICO WIJAYA KUSUMA</h4>
                 <p>Email : juanicowijayakusuma123@gmail.com</p>
-                <p style="margin-top: -20px">Phone Number : 087778072773</p>
+                <p style="margin-top: -20px">Phone Number : +6287778072773</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140"
@@ -49,8 +49,8 @@
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140"
                     src="{{ url('/person/mikhael.jpg') }}" alt="">
                 <h4 class="fw-bold" style="margin-top: 10px">MIKHAEL WICAKSONO MESTOKO</h4>
-                <p>Email :</p>
-                <p style="margin-top: -20px">Phone Number :</p>
+                <p>Email : mikhael.mestoko@binus.ac.id</p>
+                <p style="margin-top: -20px">Phone Number : +6281389500320</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140"

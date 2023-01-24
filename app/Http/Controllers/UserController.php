@@ -6,7 +6,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -39,15 +38,14 @@ class UserController extends Controller
         $userid = DB::table('users')->where('users_id', 'LIKE', $s)->get();
         return view('vieweditpassword', ['user' => $userid]);
     }
-    
-    public function display()
-    {
-        // $user = DB::table('users')->where('users_id','LIKE',$b)->get();
-        // return view('profilepage',['profile' => $user,
-        //                 'count'=>$b]);
 
-        $user = User::where('users_id', Auth::user()->users_id)->first();
-        return view('profilepage', compact('user'));
+    public function display($b)
+    {
+        $user = DB::table('users')->where('users_id', 'LIKE', $b)->get();
+        return view('profilepage', [
+            'profile' => $user,
+            'count' => $b
+        ]);
     }
 
 
@@ -60,17 +58,15 @@ class UserController extends Controller
     public function updatingpassword(Request $request, $b)
     {
         $data = DB::table('users')->where('users_id', 'LIKE', $b)->get('password')->first()->password;
-        $c = $request->oldpassword;
+        $c = Hash::make($request->oldpassword);
         $request->validate([
             'oldpassword' => 'required',
             'newpassword' => 'required',
         ]);
-        
-
         //ada kesalahan disini
-         if (!Hash::check($c,auth()->user()->$data)) {
-             return back()->with("Error", "Old Password Don't Match");
-         }
+        // if ($c != $data) {
+        //     return back()->with("Error", "Old Password Don't Match");
+        // }
 
         $datafinal = DB::table('users')->where('users_id', 'LIKE', $b)->update([
             'password' => Hash::make($request->newpassword)

@@ -48,11 +48,6 @@ class UserController extends Controller
 
         $user = User::where('users_id', Auth::user()->users_id)->first();
         return view('profilepage', compact('user'));
-        $user = DB::table('users')->where('users_id', 'LIKE', $b)->get();
-        return view('profilepage', [
-            'profile' => $user,
-            'count' => $b
-        ]);
     }
 
 

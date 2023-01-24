@@ -4,7 +4,7 @@
 
     <div class="container">
         @foreach ($user as $b)
-            <form action="/editprofile{{ $b->users_id }}}">
+            <form action="/editingprofile/{{ $b->users_id }}" method="POST">
                 @method('put')
 
                 @csrf
@@ -38,11 +38,11 @@
                 </div>
 
                 <div class="form-group my-3">
-                    <label for="phone">Phone</label>
-                    <input type="text" name="phone"
-                        class="form-control rounded-top @error('phone') is-invalid @enderror" id="phone"
-                        value="{{ auth()->user()->phone }}" required>
-                    @error('phone')
+                    <label for="phonenumber">Phone</label>
+                    <input type="text" name="phonenumber"
+                        class="form-control rounded-top @error('phonenumber') is-invalid @enderror" id="phonenumber"
+                        value="{{ auth()->user()->phonenumber }}" required>
+                    @error('phonenumber')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

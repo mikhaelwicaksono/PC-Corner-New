@@ -133,22 +133,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $b)
     {
-        $data = DB::table('users')->where('users_id', 'LIKE', $b)->get();
-
-        $request->validate([
-            'username' => 'required', 'unique:users,username',
-            'email' => 'required', 'email', 'unique:users,email',
-            'phonenumber' => 'required', 'min:10',
-            'address' => 'required', 'min:10',
-        ]);
-
-        $datafinal = DB::table('users')->where('users_id', 'LIKE', $b)->update([
+        $data = DB::table('users')->where('users_id', 'LIKE', $b)->update([
             'username' => $request->username,
             'email' => $request->email,
             'phonenumber' => $request->phonenumber,
             'address' => $request->address,
         ]);
-        return back()->with("status", "Profile Updated Successfully !!", $datafinal);
+        return back()->with("status", "Profile Updated Successfully !!", $data);
     }
 
     /**

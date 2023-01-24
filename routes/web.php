@@ -42,7 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/executedpassword/{b}', [UserController::class, 'updatingpassword']);
     Route::get('/profile/{b}', [UserController::class, 'display']);
     Route::get('/editprofile/{s}', [UserController::class, 'edit'])->name('Edit Profile Page');
-    Route::put('/editprofile/{b}', [UserController::class, 'update'])->name('Update Profile');
+    Route::put('/editingprofile/{b}', [UserController::class, 'update'])->name('Update Profile');
 
     Route::get('/home', [HomeController::class, 'showName']);
     Route::get('/about', [HomeController::class, 'about']);

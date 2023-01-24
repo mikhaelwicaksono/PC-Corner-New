@@ -13,17 +13,17 @@
 
 <body>
     <header>
-        <div class="text-center bg-image" style="background-image: url('/person/pc.png');">
+        <div class="text-center bg-image" style="background-image: url('/assets/pc.png');">
             <div class="mask" style="background-color: hsla(0, 0%, 0%, 0.6)">
-                <div class="d-flex justify-content-center align-items-center" style="height: 700px">
+                <div class="d-flex justify-content-center align-items-center" style="height: 800px">
                     <div class="text-light">
                         <a class="navbar-brand" href="/">
-                            <img style="height: 50%; width: 50%" src="{{ url('/person/logo-light.png') }}"
+                            <img style="height: 50%; width: 50%" src="{{ url('/assets/logo-light.png') }}"
                                 alt="Logo">
                         </a>
                         <h5 class="mb-4">Get Started and We Will Help You Fix Your PC Problem</h5>
-                        <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-                            role="button" rel="nofollow" target="_blank">Get Started</a>
+                        <a class="btn btn-outline-light btn-lg m-2" href="/login" role="button" rel="nofollow"
+                            target="_blank">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <div class="col-md-6 gx-5 mb-4">
                         <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
                             data-mdb-ripple-color="light">
-                            <img src="{{ url('/person/syahdan.jpg') }}" class="img-fluid" />
+                            <img src="{{ url('/assets/syahdan.jpg') }}" class="img-fluid" />
                             <a href="">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </a>
@@ -84,8 +84,8 @@
                         <img class="bd-placeholder-img rounded-circle" width="140" height="140"
                             src="{{ url('/person/ken.jpg') }}" alt="">
                         <h4 class="fw-bold" style="margin-top: 10px">KEN VIRIYA</h4>
-                        <p>Email :</p>
-                        <p style="margin-top: -20px">Phone Number :</p>
+                        <p>Email : kenviriya001@binus.ac.id</p>
+                        <p style="margin-top: -20px">Phone Number : +628991243388</p>
                     </div>
                     <div class="col-lg-4">
                         <img class="bd-placeholder-img rounded-circle" width="140" height="140"

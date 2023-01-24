@@ -118,9 +118,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($s)
     {
-        return view('editProfile');
+        $userid = DB::table('users')->where('users_id', 'LIKE', $s)->get();
+        return view('editProfile', ['user' => $userid]);
     }
 
     /**
@@ -130,8 +131,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $b)
     {
+        $data = DB::table('users')->where('users_id', 'LIKE', $b)->get();
+
         $request->validate([
             'username' => 'required', 'unique:users,username',
             'email' => 'required', 'email', 'unique:users,email',
@@ -139,14 +142,13 @@ class UserController extends Controller
             'address' => 'required', 'min:10',
         ]);
 
-        auth()->user()->update([
-            'username' => $request->get('username'),
-            'email' => $request->get('email'),
-            'phonenumber' => $request->get('phonenumber'),
-            'address' => $request->get('address'),
+        $datafinal = DB::table('users')->where('users_id', 'LIKE', $b)->update([
+            'username' => $request->username,
+            'email' => $request->email,
+            'phonenumber' => $request->phonenumber,
+            'address' => $request->address,
         ]);
-
-        return redirect()->route('Edit Profile Page');
+        return back()->with("status", "Profile Updated Successfully !!", $datafinal);
     }
 
     /**

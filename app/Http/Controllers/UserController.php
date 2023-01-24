@@ -119,7 +119,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view ('editProfile');
     }
 
     /**
@@ -131,7 +131,21 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'username' => 'required', 'unique:users,username',
+            'email' => 'required', 'email', 'unique:users,email',
+            'phonenumber' => 'required', 'min:10',
+            'address' => 'required', 'min:10',
+        ]);
+
+        auth()->user()->update([
+            'username' => $request->get('username'),
+            'email' => $request->get('email'),
+            'phonenumber' => $request->get('phonenumber'),
+            'address' => $request->get('address'),
+        ]);
+
+        return redirect()->route('Edit Profile Page');
     }
 
     /**

@@ -38,13 +38,14 @@ class UserController extends Controller
         $userid = DB::table('users')->where('users_id', 'LIKE', $s)->get();
         return view('vieweditpassword', ['user' => $userid]);
     }
-    
+
     public function display($b)
     {
-        $user = DB::table('users')->where('users_id','LIKE',$b)->get();
-        return view('profilepage',['profile' => $user,
-                        'count'=>$b]);
-
+        $user = DB::table('users')->where('users_id', 'LIKE', $b)->get();
+        return view('profilepage', [
+            'profile' => $user,
+            'count' => $b
+        ]);
     }
 
 
@@ -54,21 +55,21 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function updatingpassword(Request $request, $l)
+    public function updatingpassword(Request $request, $b)
     {
-        $data = DB::table('users')->where('users_id', 'LIKE', $l)->get('password')->first()->password;
-        $c = $request->oldpassword;
+        $data = DB::table('users')->where('users_id', 'LIKE', $b)->get('password')->first()->password;
+        $c = Hash::make($request->oldpassword);
         $request->validate([
             'oldpassword' => 'required',
             'newpassword' => 'required',
         ]);
+        //ada kesalahan disini
+        // if ($c != $data) {
+        //     return back()->with("Error", "Old Password Don't Match");
+        // }
 
-        if ((string) $c != (string) $data) {
-            return back()->with("Error", "Old Password Don't Match");
-        }
-
-        $datafinal = DB::table('users')->where('users_id', 'LIKE', $l)->update([
-            'password' => $request->newpassword
+        $datafinal = DB::table('users')->where('users_id', 'LIKE', $b)->update([
+            'password' => Hash::make($request->newpassword)
         ]);
         return back()->with("status", "Password Changed Successfully !!", $datafinal);
     }

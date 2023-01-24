@@ -14,7 +14,7 @@
             <h5 class="card-title">Brand: {{$req->brand}}</h5>
             <p>{{$req->model_code}}</p>
             <p class="card-text">Description: {{$req->more_information}}</p>
-            <a href="#" class="btn btn-primary">Edit</a><a href="#" class="btn btn-danger" style="margin-left: 15px">Delete</a>
+            <a href="{{ url('edit-service/'.$req->request_id) }}" class="btn btn-primary">Edit</a><a href="#" class="btn btn-danger" style="margin-left: 15px">Delete</a>
           </div>
         </div>
       </div>

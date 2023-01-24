@@ -18,11 +18,10 @@
                 <form action="/load/{{ $numeric }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <b>Product Image</b><br />
                         <input type="file" name="file">
-                    </div>
-
+                    </div> --}}
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Type</label>
@@ -42,9 +41,16 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="quantity">Description</label>
+                        <label for="quantity">Describe Your Problem</label>
                         <textarea name="more_information" class="form-control" id="string" aria-label="" rows="3"></textarea>
                     </div>
+
+                    <p>Please provide a photo of the device so we can understand your case better</p><br />
+
+                    <div class="form-group" style="margin-top: -30px; margin-bottom: 25px">
+                        <input type="file" name="file">
+                    </div>
+
                     <input type="submit" value="Add" class="btn" style="background-color: blue; color: white">
                 </form>
             </div>

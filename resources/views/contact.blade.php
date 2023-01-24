@@ -28,7 +28,7 @@
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140"
                     src="{{ url('/person/azhar.jpg') }}" alt="">
                 <h4 class="fw-bold" style="margin-top: 10px">AZHAR BAGOES FAISHAL</h4>
-                <p>Email :</p>
+                <p>Email : azhar.faishal@binus.ac.id</p>
                 <p style="margin-top: -20px">Phone Number :</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
@@ -42,8 +42,8 @@
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140"
                     src="{{ url('/person/ken.jpg') }}" alt="">
                 <h4 class="fw-bold" style="margin-top: 10px">KEN VIRIYA</h4>
-                <p>Email :</p>
-                <p style="margin-top: -20px">Phone Number :</p>
+                <p>Email : ken.viriya001@binus.ac.id</p>
+                <p style="margin-top: -20px">Phone Number : +628991243388</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140"

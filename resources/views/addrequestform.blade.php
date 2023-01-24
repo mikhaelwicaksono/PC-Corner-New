@@ -1,7 +1,7 @@
 @extends('template.layout')
 @section('title', 'Request Service')
 @section('content')
-    <div class="row" style="background-color:dodgerblue; color: white">
+    <div class="row" style="background-color:dodgerblue; color: white;">
         <div class="container">
             <h2 class="text-center my-5">Repair Request Form</h2>
 

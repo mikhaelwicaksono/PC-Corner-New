@@ -120,7 +120,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view ('editProfile');
+        return view('editProfile');
     }
 
     /**

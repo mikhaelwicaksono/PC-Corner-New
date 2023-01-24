@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -74,7 +75,8 @@ class RequestsController extends Controller
             $request_model->model_code =$request->model_code;
             $request_model->more_information =$request->more_information;
             $request_model->img =  $nama_img;
-            $request_model->request_date =  $date;
+            $request_model->request_date =  Carbon::now()->toDateTimeLocalString();
+            $request_model->expired_at = Carbon::now()->addDay()->toDateTimeLocalString();
             $request_model->save();
         // ]);
 

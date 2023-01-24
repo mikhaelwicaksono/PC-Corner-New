@@ -10,6 +10,7 @@ class Requests extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $primaryKey = 'request_id';
     protected $fillable = [
         'request_id',
         'users_id',
@@ -19,6 +20,13 @@ class Requests extends Model
         'more_information',
         'img',
         'request_date',
+        'expired_at',
+        'request_date'
+    ];
+
+    protected $dates = [
+        'request_date',
+        'expired_at'
     ];
 
     public  function user(){

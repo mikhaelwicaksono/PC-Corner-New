@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('model_code');
             $table->string('more_information');
             $table->string('img');
-            $table->date('request_date');
-
+            $table->dateTime('expired_at');
+            $table->dateTime('request_date');
             });
     }
 

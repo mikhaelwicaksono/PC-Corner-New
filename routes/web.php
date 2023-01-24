@@ -48,6 +48,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/about', [HomeController::class, 'about']);
     Route::get('/contact', [HomeController::class, 'contact']);
     Route::get('/history', [HistoryController::class, 'view']);
-    Route::get('/edit-service/{id}', [HistoryController::class, 'edit']);
-    Route::put('/update-service/{id}', [HistoryController::class, 'update']);
+    Route::get('/history/{id}/edit',[HistoryController::class,'edit'])->name('history.edit');
+    Route::post('/history/{id}/update',[HistoryController::class,'update'])->name('history.update');
+    Route::get('/history/{id}/delete',[HistoryController::class,'delete'])->name('history.delete');
+    
 });

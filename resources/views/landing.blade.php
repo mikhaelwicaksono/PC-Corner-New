@@ -12,95 +12,99 @@
 </head>
 
 <body>
-    {{-- <div class="container-fluid bg-primary">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 mx-auto">
-          <li class="nav-item"><a href="#" class="nav-link link-light">Get Started</a></li>
-          <li class="nav-item"><a href="#" class="nav-link link-light">About</a></li>
-          <li class="nav-item"><a href="#" class="nav-link link-light">Contact</a></li>
-        </ul>
-      </header>
-    </div> --}}
-    <div class="container-fluid">
-        <img src="{{ url('/assets/pc.png') }}" class="opacity-25" alt="">
-        <div class="container-fluid card-img-overlay text-center" style="margin-top: 20%">
-            <img src="{{ url('/assets/logo.png') }}" style="width: 25%; height: 15%;" alt="">
-            <p class="fs-1 fw-bold">Get Started And We Will Help </p>
-            <p class="fs-1 fw-bold" style="margin-top: -25px">You Fix Your PC Problem</p>
-            <a href="{{ route('register') }}" class="btn btn-primary fs-5">Get Started</a>
-        </div>
-    </div>
-
-    <div class="container-lg" style="margin-top: 60px">
-        <h1>About Us</h1>
-        <p class="fs-5 col-md-8 text-wrap">PC-Corner is a website created to help you fix problems on your computer or
-            laptop by offering a service. You can easily fill out a service submission form and wait for a response from
-            us. We will provide a solution to you based on the detailed problem information that you wrote on the
-            service submission form. We will provide our best service just for you</p>
-    </div>
-
-    <div class="container" style="margin-top: 60px">
-        <h1 class="d-flex justify-content-end">Our Contact</h1>
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
-            style="background:transparent url('/assets/binus.png') no-repeat center center /cover">
-            <div class="col-md-5 p-lg-9 mx-auto my-5">
-                {{-- <img src="{{url('/assets/binus.png')}}" alt="" class="bg-img"> --}}
-                <h1 class="display-4 fw-normal">Binus University</h1>
-                <div class="d-flex flex-row mb-3 fw-bold">
-                    <div class="p-2">Anggrek Campus</div>
-                    <div class="p-2">Kijang Campus</div>
-                    <div class="p-2">Syahdan Campus</div>
-                </div>
-                <div class="d-flex flex-row mb-3">
-                    <div class="p-2">Jl. Kebon Jeruk Raya No. 27, Kebon Jeruk, Jakarta Barat 11530, Indonesia</div>
-                    <div class="p-2">Jl. Kemanggisan Ilir III No. 45, Kemanggisan, Palmerah, Jakarta Barat 11480,
-                        Indonesia</div>
-                    <div class="p-2">Jl. K. H. Syahdan No. 9, Kemanggisan, Palmerah, Jakarta Barat 11480, Indonesia
+    <header>
+        <div class="text-center bg-image" style="background-image: url('/assets/pc.png');">
+            <div class="mask" style="background-color: hsla(0, 0%, 0%, 0.6)">
+                <div class="d-flex justify-content-center align-items-center" style="height: 800px">
+                    <div class="text-light">
+                        <a class="navbar-brand" href="/">
+                            <img style="height: 50%; width: 50%" src="{{ url('/assets/logo-light.png') }}"
+                                alt="Logo">
+                        </a>
+                        <h5 class="mb-4">Get Started and We Will Help You Fix Your PC Problem</h5>
+                        <a class="btn btn-outline-light btn-lg m-2" href="/login" role="button" rel="nofollow"
+                            target="_blank">Get Started</a>
                     </div>
                 </div>
-                <a class="btn btn-primary" href="https://binus.ac.id/" target="_blank">Visit Website</a>
             </div>
-            <div class="product-device shadow-sm d-none d-md-block"></div>
-            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </header>
+
+    <main class="mt-5">
+        <div class="container">
+            <section>
+                <div class="row">
+                    <div class="col-md-6 gx-5 mb-4">
+                        <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
+                            data-mdb-ripple-color="light">
+                            <img src="{{ url('/assets/syahdan.jpg') }}" class="img-fluid" />
+                            <a href="">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 gx-5 mb-4">
+                        <h4><strong>About Us</strong></h4>
+                        <p class="text-muted">
+                            PC-Corner is a website created to help you fix problems on your computer or laptop by
+                            offering a
+                            service. You can easily fill out a service submission form and wait for a response from us.
+                            We
+                            will provide a solution to you based on the detailed problem information that you wrote on
+                            the
+                            service submission form. We will provide our best service just for you
+                        </p>
+                        <p><strong>Binus University | Syahdan Campus</strong></p>
+                        <p class="text-muted">
+                            Jl. K. H. Syahdan No. 9, Kemanggisan, Palmerah, Jakarta Barat 11480, Indonesia
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="my-5" />
+
+            <section class="text-center">
+                <h4 class="mb-5"><strong>Our Contact</strong></h4>
+                <div class="row mx-auto text-center">
+                    <div class="col-lg-4 mb-3">
+                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                            src="{{ url('/person/azhar.jpg') }}" alt="">
+                        <h4 class="fw-bold" style="margin-top: 10px">AZHAR BAGOES FAISHAL</h4>
+                        <p>Email :</p>
+                        <p style="margin-top: -20px">Phone Number :</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                            src="{{ url('/person/juan.jpg') }}" alt="">
+                        <h4 class="fw-bold" style="margin-top: 10px">JUANICO WIJAYA KUSUMA</h4>
+                        <p>Email :</p>
+                        <p style="margin-top: -20px">Phone Number :</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                            src="{{ url('/person/ken.jpg') }}" alt="">
+                        <h4 class="fw-bold" style="margin-top: 10px">KEN VIRIYA</h4>
+                        <p>Email : kenviriya001@binus.ac.id</p>
+                        <p style="margin-top: -20px">Phone Number : +628991243388</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                            src="{{ url('/person/mikhael.jpg') }}" alt="">
+                        <h4 class="fw-bold" style="margin-top: 10px">MIKHAEL WICAKSONO MESTOKO</h4>
+                        <p>Email : mikhael.mestoko@binus.ac.id</p>
+                        <p style="margin-top: -20px">Phone Number : +6281389500320</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                            src="{{ url('/person/fiqri.jpg') }}" alt="">
+                        <h4 class="fw-bold" style="margin-top: 10px">MUHAMMAD FIQRI FEBRIANSYAH</h4>
+                        <p>Email : muhammad.febriansyah002@binus.ac.id</p>
+                        <p style="margin-top: -20px">Phone Number : +6282232103725</p>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="row mx-auto text-center">
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    src="{{ url('/person/azhar.jpg') }}" alt="">
-                <h4 class="fw-bold" style="margin-top: 10px">AZHAR BAGOES FAISHAL</h4>
-                <p>Email :</p>
-                <p style="margin-top: -20px">Phone Number :</p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    src="{{ url('/person/juan.jpg') }}" alt="">
-                <h4 class="fw-bold" style="margin-top: 10px">JUANICO WIJAYA KUSUMA</h4>
-                <p>Email :</p>
-                <p style="margin-top: -20px">Phone Number :</p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    src="{{ url('/person/ken.jpg') }}" alt="">
-                <h4 class="fw-bold" style="margin-top: 10px">KEN VIRIYA</h4>
-                <p>Email :</p>
-                <p style="margin-top: -20px">Phone Number :</p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    src="{{ url('/person/mikhael.jpg') }}" alt="">
-                <h4 class="fw-bold" style="margin-top: 10px">MIKHAEL WICAKSONO MESTOKO</h4>
-                <p>Email : mikhael.mestoko@binus.ac.id</p>
-                <p style="margin-top: -20px">Phone Number : +6281389500320</p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    src="{{ url('/person/fiqri.jpg') }}" alt="">
-                <h4 class="fw-bold" style="margin-top: 10px">MUHAMMAD FIQRI FEBRIANSYAH</h4>
-                <p>Email : muhammad.febriansyah002@binus.ac.id</p>
-                <p style="margin-top: -20px">Phone Number : +6282232103725</p>
-            </div><!-- /.col-lg-4 -->
-        </div>
-    </div>
+    </main>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">

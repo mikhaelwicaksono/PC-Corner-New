@@ -29,7 +29,7 @@
                     src="{{ url('/person/azhar.jpg') }}" alt="">
                 <h4 class="fw-bold" style="margin-top: 10px">AZHAR BAGOES FAISHAL</h4>
                 <p>Email : azhar.faishal@binus.ac.id</p>
-                <p style="margin-top: -20px">Phone Number :</p>
+                <p style="margin-top: -20px">Phone Number : +6282110258338</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="bd-placeholder-img rounded-circle" width="140" height="140"

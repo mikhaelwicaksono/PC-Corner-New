@@ -51,7 +51,7 @@ class HistoryController extends Controller
         // $request_model->request_date =  Carbon::now()->toDateTimeLocalString();
         // $request_model->expired_at = Carbon::now()->addDay()->toDateTimeLocalString();
         $request_model->save();
-
+ 
         return redirect()->back();
     }
 

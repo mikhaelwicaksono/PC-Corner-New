@@ -42,7 +42,7 @@
                     <b>Product Image</b><br />
                     <input type="file" name="file" accept="image/*" class="form-control">
                 </div>
-                <input type="submit" value="Add" class="btn" style="background-color: blue; color: white; margin-top: 10px">
+                <input type="submit" value="Edit" class="btn" style="background-color: blue; color: white; margin-top: 10px">
             </form>
         </div>
     </div>
